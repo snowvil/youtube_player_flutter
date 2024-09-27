@@ -648,7 +648,8 @@ class YoutubePlayerController implements YoutubePlayerIFrameAPI {
     } else if (params.containsKey('feature')) {
       featureName = params['feature'];
     } else if (path == '/watch') {
-      featureName = 'emb_info';
+      //featureName = 'emb_info';
+      featureName = 'emb_title';
     } else if (defaultTargetPlatform == TargetPlatform.iOS) {
       return NavigationDecision.navigate;
     }
