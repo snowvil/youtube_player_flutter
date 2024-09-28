@@ -5,7 +5,7 @@ import 'dart:developer';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:meta/meta.dart';
-import 'package:url_launcher/url_launcher.dart' as uri_launcher;
+import 'package:url_launcher/url_launcher.dart' ;
 import 'package:url_launcher/types.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_android/webview_flutter_android.dart';
@@ -672,7 +672,7 @@ class YoutubePlayerController implements YoutubePlayerIFrameAPI {
       case 'emb_logo':
       case 'social':
       case 'wl_button':
-        uri_launcher.launchUrl(uri, mode: LaunchMode.externalApplication);
+        launchUrl(uri, mode: LaunchMode.externalApplication);
         break;
     }
 
