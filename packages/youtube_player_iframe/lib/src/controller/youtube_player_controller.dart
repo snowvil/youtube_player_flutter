@@ -648,8 +648,14 @@ class YoutubePlayerController implements YoutubePlayerIFrameAPI {
     } else if (params.containsKey('feature')) {
       featureName = params['feature'];
     } else if (path == '/watch') {
-      //featureName = 'emb_info';
-      featureName = 'emb_title';
+      featureName = 'emb_info';
+
+      // 시간관련 변수가 있는경우 : 타이틀 클릭 / 로고 클릭시
+      // 그외 는 영상 플레이 끝나고 다른영상 추천에서는 내부 플레이어에서 재생하도록 한다.
+      if(params.containsKey('time_continue')) {
+        featureName = 'emb_title';
+      }
+
     } else if (defaultTargetPlatform == TargetPlatform.iOS) {
       return NavigationDecision.navigate;
     }
