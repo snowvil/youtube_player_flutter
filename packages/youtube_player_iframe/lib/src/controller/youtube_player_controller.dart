@@ -671,7 +671,7 @@ class YoutubePlayerController implements YoutubePlayerIFrameAPI {
       case 'emb_logo':
       case 'social':
       case 'wl_button':
-        uri_launcher.launchUrl(uri);
+        uri_launcher.launchUrl(uri, mode: LaunchMode.externalApplication);
         break;
     }
 
